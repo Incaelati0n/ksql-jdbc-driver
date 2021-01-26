@@ -17,7 +17,8 @@ val dependencies = Seq(
   "org.apache.kafka" %% "kafka" % kafkaVersion % "test",
   "org.scalatest" %% "scalatest" % scalaTestVersion % "test",
   "org.scalamock" %% "scalamock-scalatest-support" % scalaMockVersion % "test",
-  "javax.ws.rs" % "javax.ws.rs-api" % wsApiVersion artifacts Artifact("javax.ws.rs-api", "jar", "jar")
+  /*"javax.ws.rs" % "javax.ws.rs-api" % wsApiVersion artifacts Artifact("javax.ws.rs-api", "jar", "jar")*/
+  "org.openjfx" % "javafx-base" % "11" artifacts Artifact("javax.ws.rs-api", "jar", "jar")
 )
 
 val common = Seq(
