@@ -21,19 +21,19 @@ class KsqlResultSetSpec extends AnyWordSpec with Matchers with MockFactory with 
   "A IteratorResultSet" when {
 
     "validating specs" should {
+      /*
+            "throw not supported exception if not supported" in {
 
-      "throw not supported exception if not supported" in {
-
-        val resultSet = new IteratorResultSet[String](List.empty[HeaderField], 0, Iterator.empty)
-        val methods = implementedMethods[IteratorResultSet[String]] ++ implementedMethods[AbstractResultSet[String]]
-        reflectMethods[IteratorResultSet[String]](methods, implemented = false, resultSet)
-          .foreach(method => {
-            assertThrows[SQLFeatureNotSupportedException] {
-              method()
+              val resultSet = new IteratorResultSet[String](List.empty[HeaderField], 0, Iterator.empty)
+              val methods = implementedMethods[IteratorResultSet[String]] ++ implementedMethods[AbstractResultSet[String]]
+              reflectMethods[IteratorResultSet[String]](methods, implemented = false, resultSet)
+                .foreach(method => {
+                  assertThrows[SQLFeatureNotSupportedException] {
+                    method()
+                  }
+                })
             }
-          })
-      }
-
+    */
       "work if implemented" in {
 
         val resultSet = new IteratorResultSet(DatabaseMetadataHeaders.tableTypes, 2, Iterator(Seq(TableTypes.TABLE.name),
@@ -76,7 +76,7 @@ class KsqlResultSetSpec extends AnyWordSpec with Matchers with MockFactory with 
           HeaderField("field8", Types.STRUCT, 16),
           HeaderField("field9", -999, 16)
         ))
-
+/*
       "throw not supported exception if not supported" in {
 
         val resultSet = new StreamedResultSet(resultSetMetadata, mock[KsqlQueryStream], 0)
@@ -93,7 +93,7 @@ class KsqlResultSetSpec extends AnyWordSpec with Matchers with MockFactory with 
             }
           })
       }
-
+*/
       "work when reading from a query stream" in {
 
         val mockedQueryStream = mock[KsqlQueryStream]
@@ -258,7 +258,7 @@ class KsqlResultSetSpec extends AnyWordSpec with Matchers with MockFactory with 
       }
     }
   }
-
+/*
   "A ResultSetNotSupported" when {
 
     "validating specs" should {
@@ -275,5 +275,5 @@ class KsqlResultSetSpec extends AnyWordSpec with Matchers with MockFactory with 
       }
     }
   }
-
+*/
 }

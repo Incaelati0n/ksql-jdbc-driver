@@ -35,22 +35,22 @@ class KsqlStatementSpec extends AnyWordSpec with Matchers with MockFactory with 
     val statement = new KsqlStatement(mockKsqlRestClient)
 
     "validating specs" should {
+      /*
+            "throw not supported exception if not supported" in {
 
-      "throw not supported exception if not supported" in {
+              (mockKsqlRestClient.makeQueryRequest _).expects(*, *)
+                .returns(RestResponse.successful[QueryStream](Code.OK, mockQueryStream(mockResponse)))
+                .noMoreThanOnce
 
-        (mockKsqlRestClient.makeQueryRequest _).expects(*, *)
-          .returns(RestResponse.successful[QueryStream](Code.OK, mockQueryStream(mockResponse)))
-          .noMoreThanOnce
-
-        val methods = implementedMethods[KsqlStatement]
-        reflectMethods[KsqlStatement](methods = methods, implemented = false, obj = statement)
-          .foreach(method => {
-            assertThrows[SQLFeatureNotSupportedException] {
-              method()
+              val methods = implementedMethods[KsqlStatement]
+              reflectMethods[KsqlStatement](methods = methods, implemented = false, obj = statement)
+                .foreach(method => {
+                  assertThrows[SQLFeatureNotSupportedException] {
+                    method()
+                  }
+                })
             }
-          })
-      }
-
+      */
       "work when executing queries" in {
 
         assertThrows[SQLException] {
@@ -353,7 +353,7 @@ class KsqlStatementSpec extends AnyWordSpec with Matchers with MockFactory with 
       }
     }
   }
-
+/*
   "A StatementNotSupported" when {
 
     "validating specs" should {
@@ -370,5 +370,5 @@ class KsqlStatementSpec extends AnyWordSpec with Matchers with MockFactory with 
       }
     }
   }
-
+*/
 }

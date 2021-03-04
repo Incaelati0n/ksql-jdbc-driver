@@ -137,7 +137,11 @@ class ConnectionNotSupported extends Connection with WrapperNotSupported {
 
   override def getAutoCommit: Boolean = throw NotSupported("getAutoCommit")
 
-  override def clearWarnings(): Unit = throw NotSupported("clearWarnings")
+  override def clearWarnings(): Unit = {
+    // TODO
+    //  we currently do not support this,
+    //  but we can't throw a SQLException because we want to support ontop
+  }
 
   override def getSchema: String = throw NotSupported("getSchema")
 

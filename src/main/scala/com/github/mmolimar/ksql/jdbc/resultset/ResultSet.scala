@@ -38,7 +38,11 @@ private[resultset] class ResultSetNotSupported extends ResultSet with WrapperNot
 
   override def updateNString(columnLabel: String, nString: String): Unit = throw NotSupported("updateNString")
 
-  override def clearWarnings(): Unit = throw NotSupported("clearWarnings")
+  override def clearWarnings(): Unit = {
+    // TODO
+    //  we currently do not support this,
+    //  but we can't throw a SQLException because we want to support ontop
+  }
 
   override def updateTimestamp(columnIndex: Int, x: Timestamp): Unit = throw NotSupported("updateTimestamp")
 

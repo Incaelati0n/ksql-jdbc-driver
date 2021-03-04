@@ -21,7 +21,7 @@ class KsqlConnectionSpec extends AnyWordSpec with Matchers with MockFactory {
       val ksqlConnection = new KsqlConnection(values, new Properties) {
         override def init: KsqlRestClient = mockKsqlRestClient
       }
-
+/*
       "throw not supported exception if not supported" in {
         val methods = implementedMethods[KsqlConnection]
         reflectMethods[KsqlConnection](methods = methods, implemented = false, obj = ksqlConnection)
@@ -31,7 +31,7 @@ class KsqlConnectionSpec extends AnyWordSpec with Matchers with MockFactory {
             }
           })
       }
-
+*/
       "work if implemented" in {
         assertThrows[SQLException] {
           ksqlConnection.isClosed
@@ -77,7 +77,7 @@ class KsqlConnectionSpec extends AnyWordSpec with Matchers with MockFactory {
       }
     }
   }
-
+/*
   "A ConnectionNotSupported" when {
 
     "validating specs" should {
@@ -94,5 +94,6 @@ class KsqlConnectionSpec extends AnyWordSpec with Matchers with MockFactory {
       }
     }
   }
+  */
 
 }

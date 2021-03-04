@@ -100,7 +100,11 @@ class StatementNotSupported extends Statement with WrapperNotSupported {
 
   override def setFetchSize(rows: Int): Unit = throw NotSupported("setFetchSize")
 
-  override def clearWarnings(): Unit = throw NotSupported("clearWarnings")
+  override def clearWarnings(): Unit = {
+    // TODO
+    //  we currently do not support this,
+    //  but we can't throw a SQLException because we want to support ontop
+  }
 
   override def getResultSetConcurrency: Int = throw NotSupported("getResultSetConcurrency")
 
