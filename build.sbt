@@ -5,6 +5,7 @@ val kafkaVersion = "2.4.0"
 val scalaTestVersion = "3.1.0"
 val scalaMockVersion = "3.6.0"
 val wsApiVersion = "2.1.1"
+val antlrVersion = "4.8"
 
 val repos = Seq(
   "Confluent Maven Repo" at "https://packages.confluent.io/maven/",
@@ -18,7 +19,9 @@ val dependencies = Seq(
   "org.scalatest" %% "scalatest" % scalaTestVersion % "test",
   "org.scalamock" %% "scalamock-scalatest-support" % scalaMockVersion % "test",
   /*"javax.ws.rs" % "javax.ws.rs-api" % wsApiVersion artifacts Artifact("javax.ws.rs-api", "jar", "jar")*/
-  "org.openjfx" % "javafx-base" % "11" artifacts Artifact("javax.ws.rs-api", "jar", "jar")
+  "org.openjfx" % "javafx-base" % "11" artifacts Artifact("javax.ws.rs-api", "jar", "jar"),
+  "org.antlr" % "antlr4-runtime" % antlrVersion,
+  "org.antlr" % "antlr4-master" % antlrVersion
 )
 
 val common = Seq(
