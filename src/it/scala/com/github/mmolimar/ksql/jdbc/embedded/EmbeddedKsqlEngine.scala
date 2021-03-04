@@ -20,7 +20,7 @@ class EmbeddedKsqlEngine(port: Int = TestUtils.getAvailablePort, brokerList: Str
     ProducerConfig.BOOTSTRAP_SERVERS_CONFIG -> brokerList,
     KsqlConfig.CONNECT_URL_PROPERTY -> connectUrl,
     "ksql.service.id" -> "ksql-jdbc",
-    "ksql.streams.auto.offset.reset" -> "latest",
+    "ksql.streams.auto.offset.reset" -> "earliest",
     "ksql.command.topic.suffix" -> "commands"
   ).asJava)
 
